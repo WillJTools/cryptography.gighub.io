@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+<title>Cryptography Lessons</title>
+</head>
+<body>
+  <div class="lesson">
+    <h1>Lesson 1: Caesar Cipher</h1>
+    <p><strong>Definition:</strong> The Caesar Cipher is a simple substitution cipher where each letter in the plaintext is shifted by a fixed number of positions.</p>
+    <p><strong>Example:</strong> Suppose we have the ciphertext "EBIIL" and we know it's encrypted using a Caesar Cipher with a shift of 1.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Identify the shift value (1 in this case).</li>
+      <li>Shift each letter in the ciphertext backwards by 1: "EBIIL" becomes "DAAHK", revealing the original plaintext "HELLO".</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 2: Substitution Cipher</h1>
+    <p><strong>Definition:</strong> The Substitution Cipher replaces each letter with another letter, number, or symbol based on a fixed mapping.</p>
+    <p><strong>Example:</strong> Given the ciphertext "D1F2" and the mapping A=1, B=2, ..., Z=26, decode the message.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Use the mapping to decode each number: D=4, 1=A, F=6, 2=B.</li>
+      <li>The decoded message is "D1F2" → "A4B6".</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 3: Vigenère Cipher</h1>
+    <p><strong>Definition:</strong> The Vigenère Cipher uses a keyword to shift letters in a repeating pattern.</p>
+    <p><strong>Example:</strong> Ciphertext "RIJVS" is encrypted using the keyword "KEY". Decrypt the message.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Match the keyword's letters to the ciphertext: R-K, I-E, J-Y, V-K, S-E.</li>
+      <li>Decrypt each letter by shifting backwards according to the keyword: R-K=Q, I-E=G, J-Y=V, V-K=P, S-E=N.</li>
+      <li>The decrypted message is "RIJVS" → "QGVPN".</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 4: Transposition Cipher</h1>
+    <p><strong>Definition:</strong> The Transposition Cipher rearranges characters in the plaintext according to a certain system.</p>
+    <p><strong>Example:</strong> Given the ciphertext "OLLEH" from reversing "HELLO", recover the original message.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Reverse the order of the characters in the ciphertext: "OLLEH" → "HELLO".</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 5: One-Time Pad</h1>
+    <p><strong>Definition:</strong> The One-Time Pad uses a random key as long as the plaintext and XORs it to encrypt.</p>
+    <p><strong>Example:</strong> Ciphertext "DPMWM" was encrypted using the key "XMCKL". Decrypt the message.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>XOR each corresponding character in the ciphertext and key to get the plaintext.</li>
+      <li>The decrypted message is "DPMWM" → "KHOOR".</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 6: RSA (Rivest-Shamir-Adleman)</h1>
+    <p><strong>Definition:</strong> RSA is an asymmetric algorithm that uses a public and private key pair for encryption and decryption.</p>
+    <p><strong>Example:</strong> Encrypt and decrypt a message using RSA.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Generate two large prime numbers, p and q.</li>
+      <li>Compute n = p * q and φ(n) = (p - 1) * (q - 1).</li>
+      <li>Choose an encryption key e that is coprime to φ(n).</li>
+      <li>Calculate the decryption key d as the modular inverse of e modulo φ(n).</li>
+      <li>Encrypt the message m by computing c = m^e mod n.</li>
+      <li>Decrypt the ciphertext c to recover the message m: m = c^d mod n.</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 7: AES (Advanced Encryption Standard)</h1>
+    <p><strong>Definition:</strong> AES is a symmetric block cipher that supports various key lengths for encryption and decryption.</p>
+    <p><strong>Example:</strong> Encrypt and decrypt data using AES.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Choose a key of the appropriate length for AES (128, 192, or 256 bits).</li>
+      <li>Use the AES encryption algorithm to encrypt the plaintext data.</li>
+      <li>Use the AES decryption algorithm to decrypt the ciphertext data.</li>
+    </ol>
+  </div>
+
+  <div class="lesson">
+    <h1>Lesson 8: Diffie-Hellman Key Exchange</h1>
+    <p><strong>Definition:</strong> Diffie-Hellman Key Exchange allows two parties to securely exchange cryptographic keys over an insecure channel.</p>
+    <p><strong>Example:</strong> Exchange keys using the Diffie-Hellman protocol.</p>
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li>Both parties agree on a large prime number p and a primitive root g modulo p.</li>
+      <li>Each party chooses a secret number (a for Alice, b for Bob).</li>
+      <li>They compute their respective public keys (A = g^a
